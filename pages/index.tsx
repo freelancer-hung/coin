@@ -29,7 +29,7 @@ const Home: NextPage = () => {
             const result = _.sortBy(transactions.data, function (item: any) {
                 return item.blockTime
             })
-            const result1 = _.filter(result, function (o) {
+            const result1 = _.filter(result, function (o: any) {
                 return o.parsedInstruction[0].programId == '11111111111111111111111111111111' && o.parsedInstruction[0].program == 'system' && o.parsedInstruction[0].type == 'Unknown'
             })
             const blockTime = result1[result1.length - 1].blockTime
