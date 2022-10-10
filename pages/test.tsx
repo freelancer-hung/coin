@@ -38,7 +38,7 @@ const Home: NextPage = () => {
     }
     if (data) {
         return (
-            <div className='container'>
+            <div className='container 1'>
 
                 {data.map((item, index) => {
                     return (
