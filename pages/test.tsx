@@ -42,7 +42,7 @@ const Home: NextPage = () => {
 
                 {data.map((item, index) => {
                     return (
-                        <div>
+                        <div key={index}>
                             <div>
                                 {item.signature}
                             </div>
@@ -50,7 +50,7 @@ const Home: NextPage = () => {
                                 {item.main_actions?.map((item1, index1) => {
                                     if (item1?.extra) {
                                         return (
-                                            <li>
+                                            <li key={index1}>
                                                 {item1?.extra?.tokenAddress} | <b>{item1?.extra?.symbol}</b>
                                             </li>
                                         )
@@ -68,9 +68,7 @@ const Home: NextPage = () => {
             <input type="text" value={account} onChange={(e) => {
                 setAccount(e.target.value)
             }}/>
-            <label>Result</label>
-            <textarea rows={10} className='form-control mb-3' value={logs}>
-                </textarea>
+
             <button className='btn btn-primary' onClick={getData}
                     disabled={isLoading}>{isLoading ? 'loading' : 'fetch'}</button>
 
